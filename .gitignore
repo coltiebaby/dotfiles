@@ -4,5 +4,7 @@
 # Except for these
 !.gitignore
 !.bash_profile
+!.bash_python
+!.profile
 !.vimrc
 !README.md
