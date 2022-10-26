@@ -1,6 +1,0 @@
-# Virtual Env Wrapper Stuff
-export WORKON_HOME=$HOME/.virtualenvs
-source /Users/coltonrobertson/Library/Python/2.7/bin/virtualenvwrapper.sh
-export PYTHONDONTWRITEBYTECODE=1
-export PATH="/usr/local/opt/python@2/libexec/bin:$PATH"
-export PATH="/Users/coltonrobertson/Library/Python/2.7/bin:$PATH"
