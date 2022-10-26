@@ -15,6 +15,11 @@ Plugin 'rust-lang/rust.vim'
 Plugin 'JamshedVesuna/vim-markdown-preview'
 " vim-scala
 Plugin 'derekwyatt/vim-scala'
+" colorschemes
+Plugin 'flazz/vim-colorschemes'
+Plugin 'tomasiser/vim-code-dark'
+"vue
+Plugin 'posva/vim-vue'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -42,7 +47,7 @@ endif
 
 " Let vim preview markdown in the browser
 let vim_markdown_preview_github=1
-let vim_markdown_preview_browser='Quantum'
+let vim_markdown_preview_browser='Firefox'
 
 " Turn on syntax by default
 syntax on
@@ -54,7 +59,8 @@ vnoremap p pgvy
 " Colorscheme
 syntax enable
 set background=dark
-colorscheme special_boards
+" colorscheme codedark
+colorscheme summerfruit
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
@@ -118,6 +124,9 @@ set wildignore+=*.pyc,*.pyo
 set splitbelow
 set splitright
 
+" Tabs
+nnoremap tt :tabedit . <Enter>
+
 nnoremap ,j <C-W><C-J>
 nnoremap ,k <C-W><C-K>
 nnoremap ,l <C-W><C-L>
@@ -135,3 +144,12 @@ autocmd BufWritePre * %s/\s\+$//e
 let g:scala_scaladoc_indent = 1
 au FileType scala setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2
 autocmd BufEnter *.scala colorscheme thor
+
+" Show by default 4 spaces for a tab
+autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4
+
+" Change the working directory to the current file always
+autocmd BufEnter,BufWritePost * lcd %:p:h
+
+" auto fmt rust code
+let g:rustfmt_autosave = 1
