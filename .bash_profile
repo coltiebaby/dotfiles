@@ -1,14 +1,6 @@
 export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
 
-# Contains alias
-source ~/.profile
-source ~/.bash_python
-
-# Virtualenvwrapper stuff
-export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=$HOME/Devel
-
 parse_git_branch() {
      git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
